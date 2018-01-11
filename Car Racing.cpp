@@ -1,4 +1,7 @@
-
+//How To Play :
+//Kita menggerakkan mobil dengan menhindari musuh yang datang dengan memencet tombol "A" untuk berpindah posisi ke kiri dan "D" untuk berpindah posisi ke kanan
+//Diberikan Kesempatan 5x Tabrakan dengan musuh , kalau sudah 5x maka akan kalah dan dihitung scorenya , high score akan ditampilkan 
+// Setiap score kelipatan 50 maka kecepatan musuh akan meningkat
 
 
 
@@ -297,9 +300,9 @@ int main()
     float before = clock();
     gambarLatar();
     Credit();
-    while(pemainUtama.darah > 0 && (spk - iJarak / 200) > 0)
+    while(pemainUtama.darah > 0 && (spk - iJarak / 50) > 0)
     {
-        Speed(spk - iJarak / 200);
+        Speed(spk - iJarak / 50);
         iJarak++;
         if(awal > 8) awal = 0;
         gambarJalan(spasi, awal);
@@ -364,9 +367,9 @@ int main()
             mulai = true;
         }
         control = ' ';
-        tidur(spk - iJarak / 200);
+        tidur(spk - iJarak / 50);
     }
-    spk -= iJarak / 200;
+    spk -= (iJarak / 50);
     system("cls");
     saveScore();
     gotoxy(20, 12); cout << "Game Berakhir Score Anda : " << iJarak;
